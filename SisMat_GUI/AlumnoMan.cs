@@ -16,5 +16,18 @@ namespace SisMat_GUI
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MatricularAlumno matricularModal = new MatricularAlumno();
+            matricularModal.ShowDialog();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ActualizarAlumno actualizarModal = new ActualizarAlumno();
+            actualizarModal.ShowDialog();
+
+        }
     }
 }

@@ -16,5 +16,23 @@ namespace SisMat_GUI
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AgregarProfesor agregarProfeModal = new AgregarProfesor();
+            agregarProfeModal.ShowDialog();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ActualizarProfesor actualizarProfeModal = new ActualizarProfesor();
+            actualizarProfeModal.ShowDialog();
+        }
+
+ 
+        private void ProfesorMan_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
