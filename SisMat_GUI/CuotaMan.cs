@@ -16,5 +16,22 @@ namespace SisMat_GUI
         {
             InitializeComponent();
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AgregarCuota agregarCuotaModal = new AgregarCuota();
+            agregarCuotaModal.ShowDialog();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ActualizarCuota editarCuotaModal = new ActualizarCuota();
+            editarCuotaModal.ShowDialog();
+        }
     }
 }
