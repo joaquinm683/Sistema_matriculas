@@ -195,12 +195,14 @@
             this.button2.TabIndex = 16;
             this.button2.Text = "Cancelar";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // pctFotoProf
             // 
             this.pctFotoProf.Location = new System.Drawing.Point(420, 155);
             this.pctFotoProf.Name = "pctFotoProf";
             this.pctFotoProf.Size = new System.Drawing.Size(242, 231);
+            this.pctFotoProf.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pctFotoProf.TabIndex = 17;
             this.pctFotoProf.TabStop = false;
             // 

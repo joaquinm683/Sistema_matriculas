@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-// Agregamos los using...
 using SisMat_ADO;
 using SisMat_BE;
 using System.Data;

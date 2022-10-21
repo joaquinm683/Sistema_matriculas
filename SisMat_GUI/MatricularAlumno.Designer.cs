@@ -158,7 +158,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(28, 27);
+            this.label1.Location = new System.Drawing.Point(28, 26);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(137, 37);
             this.label1.TabIndex = 17;
@@ -166,7 +166,7 @@
             // 
             // pctbFoto
             // 
-            this.pctbFoto.Location = new System.Drawing.Point(389, 160);
+            this.pctbFoto.Location = new System.Drawing.Point(389, 168);
             this.pctbFoto.Name = "pctbFoto";
             this.pctbFoto.Size = new System.Drawing.Size(210, 186);
             this.pctbFoto.TabIndex = 34;

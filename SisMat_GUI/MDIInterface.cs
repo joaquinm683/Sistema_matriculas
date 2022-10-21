@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SisMat_GUI
 {
-      public partial class MainInterface : Form
+      public partial class MDIInterface : Form
       {
-            public MainInterface()
+            public MDIInterface()
             {
                 InitializeComponent();
                 IsMdiContainer = true;

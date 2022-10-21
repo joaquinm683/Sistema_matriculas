@@ -25,7 +25,7 @@ namespace SisMat_GUI
         private void button1_Click(object sender, EventArgs e)
         {
           /* SI TODO OK IR A MainInterface */
-            MainInterface mainView = new MainInterface();
+            MDIInterface mainView = new MDIInterface();
             mainView.Show();
         }
 

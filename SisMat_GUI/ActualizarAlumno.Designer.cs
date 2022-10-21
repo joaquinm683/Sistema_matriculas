@@ -34,7 +34,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.btnCargarFoto = new System.Windows.Forms.Button();
             this.pctFoto = new System.Windows.Forms.PictureBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.btnActualizarAlumno = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -49,13 +49,15 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.cmbEstado = new System.Windows.Forms.ComboBox();
+            this.cmbSexo = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pctFoto)).BeginInit();
             this.SuspendLayout();
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(109, 449);
+            this.label8.Location = new System.Drawing.Point(63, 409);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(103, 15);
             this.label8.TabIndex = 58;
@@ -64,7 +66,7 @@
             // mskFechaNacimiento
             // 
             this.mskFechaNacimiento.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Insert;
-            this.mskFechaNacimiento.Location = new System.Drawing.Point(240, 446);
+            this.mskFechaNacimiento.Location = new System.Drawing.Point(190, 406);
             this.mskFechaNacimiento.Mask = "0000/00/00";
             this.mskFechaNacimiento.Name = "mskFechaNacimiento";
             this.mskFechaNacimiento.Size = new System.Drawing.Size(100, 23);
@@ -74,7 +76,7 @@
             // cmbUbigeo
             // 
             this.cmbUbigeo.FormattingEnabled = true;
-            this.cmbUbigeo.Location = new System.Drawing.Point(186, 394);
+            this.cmbUbigeo.Location = new System.Drawing.Point(154, 351);
             this.cmbUbigeo.Name = "cmbUbigeo";
             this.cmbUbigeo.Size = new System.Drawing.Size(210, 23);
             this.cmbUbigeo.TabIndex = 56;
@@ -82,7 +84,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(109, 397);
+            this.label7.Location = new System.Drawing.Point(63, 359);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(45, 15);
             this.label7.TabIndex = 55;
@@ -102,19 +104,20 @@
             this.pctFoto.Location = new System.Drawing.Point(469, 180);
             this.pctFoto.Name = "pctFoto";
             this.pctFoto.Size = new System.Drawing.Size(210, 186);
+            this.pctFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pctFoto.TabIndex = 53;
             this.pctFoto.TabStop = false;
             // 
-            // button2
+            // btnCancelar
             // 
-            this.button2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button2.Location = new System.Drawing.Point(63, 568);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(131, 34);
-            this.button2.TabIndex = 52;
-            this.button2.Text = "Cancelar";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnCancelar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnCancelar.Location = new System.Drawing.Point(35, 568);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(131, 34);
+            this.btnCancelar.TabIndex = 52;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.button2_Click);
             // 
             // btnActualizarAlumno
             // 
@@ -131,7 +134,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(108, 346);
+            this.label6.Location = new System.Drawing.Point(63, 306);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(39, 15);
             this.label6.TabIndex = 50;
@@ -140,7 +143,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(109, 293);
+            this.label5.Location = new System.Drawing.Point(63, 258);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(55, 15);
             this.label5.TabIndex = 49;
@@ -150,7 +153,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(108, 243);
+            this.label4.Location = new System.Drawing.Point(63, 208);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(30, 15);
             this.label4.TabIndex = 48;
@@ -159,7 +162,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(109, 189);
+            this.label3.Location = new System.Drawing.Point(63, 160);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(54, 15);
             this.label3.TabIndex = 47;
@@ -168,7 +171,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(109, 140);
+            this.label2.Location = new System.Drawing.Point(63, 114);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(54, 15);
             this.label2.TabIndex = 46;
@@ -176,35 +179,35 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(186, 343);
+            this.txtEmail.Location = new System.Drawing.Point(154, 306);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(210, 23);
             this.txtEmail.TabIndex = 45;
             // 
             // txtTelefono
             // 
-            this.txtTelefono.Location = new System.Drawing.Point(186, 293);
+            this.txtTelefono.Location = new System.Drawing.Point(154, 255);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(210, 23);
             this.txtTelefono.TabIndex = 44;
             // 
             // txtDNI
             // 
-            this.txtDNI.Location = new System.Drawing.Point(186, 240);
+            this.txtDNI.Location = new System.Drawing.Point(154, 205);
             this.txtDNI.Name = "txtDNI";
             this.txtDNI.Size = new System.Drawing.Size(210, 23);
             this.txtDNI.TabIndex = 43;
             // 
             // txtApellido
             // 
-            this.txtApellido.Location = new System.Drawing.Point(186, 189);
+            this.txtApellido.Location = new System.Drawing.Point(154, 157);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(210, 23);
             this.txtApellido.TabIndex = 42;
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(186, 137);
+            this.txtNombre.Location = new System.Drawing.Point(154, 114);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(210, 23);
             this.txtNombre.TabIndex = 41;
@@ -213,7 +216,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(108, 47);
+            this.label1.Location = new System.Drawing.Point(52, 36);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(86, 37);
             this.label1.TabIndex = 40;
@@ -222,7 +225,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(109, 501);
+            this.label9.Location = new System.Drawing.Point(66, 455);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(42, 15);
             this.label9.TabIndex = 59;
@@ -231,16 +234,35 @@
             // cmbEstado
             // 
             this.cmbEstado.FormattingEnabled = true;
-            this.cmbEstado.Location = new System.Drawing.Point(172, 498);
+            this.cmbEstado.Location = new System.Drawing.Point(128, 452);
             this.cmbEstado.Name = "cmbEstado";
             this.cmbEstado.Size = new System.Drawing.Size(131, 23);
             this.cmbEstado.TabIndex = 60;
+            // 
+            // cmbSexo
+            // 
+            this.cmbSexo.FormattingEnabled = true;
+            this.cmbSexo.Location = new System.Drawing.Point(128, 501);
+            this.cmbSexo.Name = "cmbSexo";
+            this.cmbSexo.Size = new System.Drawing.Size(131, 23);
+            this.cmbSexo.TabIndex = 61;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(66, 509);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(32, 15);
+            this.label10.TabIndex = 62;
+            this.label10.Text = "Sexo";
             // 
             // ActualizarAlumno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(801, 647);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.cmbSexo);
             this.Controls.Add(this.cmbEstado);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
@@ -249,7 +271,7 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.btnCargarFoto);
             this.Controls.Add(this.pctFoto);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnActualizarAlumno);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -279,7 +301,7 @@
         private Label label7;
         private Button btnCargarFoto;
         private PictureBox pctFoto;
-        private Button button2;
+        private Button btnCancelar;
         private Button btnActualizarAlumno;
         private Label label6;
         private Label label5;
@@ -294,5 +316,7 @@
         private Label label1;
         private Label label9;
         private ComboBox cmbEstado;
+        private ComboBox cmbSexo;
+        private Label label10;
     }
 }

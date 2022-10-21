@@ -1,6 +1,6 @@
 ﻿namespace SisMat_GUI
 {
-  partial class MainInterface
+  partial class MDIInterface
   {
     /// <summary>
     /// Required designer variable.
