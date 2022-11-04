@@ -41,10 +41,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.cmbEstado = new System.Windows.Forms.ComboBox();
-            this.mskFechaPago = new System.Windows.Forms.MaskedTextBox();
-            this.mskVencimiento = new System.Windows.Forms.MaskedTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtNumCuota = new System.Windows.Forms.TextBox();
+            this.dtpVencimiento = new System.Windows.Forms.DateTimePicker();
+            this.dtpFechaPago = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // label8
@@ -86,6 +86,7 @@
             this.btnActualizarCuota.TabIndex = 50;
             this.btnActualizarCuota.Text = "Confirmar";
             this.btnActualizarCuota.UseVisualStyleBackColor = false;
+            this.btnActualizarCuota.Click += new System.EventHandler(this.btnActualizarCuota_Click);
             // 
             // mskPrecio
             // 
@@ -164,24 +165,7 @@
             this.cmbEstado.Name = "cmbEstado";
             this.cmbEstado.Size = new System.Drawing.Size(113, 23);
             this.cmbEstado.TabIndex = 41;
-            // 
-            // mskFechaPago
-            // 
-            this.mskFechaPago.Location = new System.Drawing.Point(124, 404);
-            this.mskFechaPago.Mask = "0000/00/000 00:00";
-            this.mskFechaPago.Name = "mskFechaPago";
-            this.mskFechaPago.Size = new System.Drawing.Size(100, 23);
-            this.mskFechaPago.TabIndex = 40;
-            this.mskFechaPago.ValidatingType = typeof(System.DateTime);
-            // 
-            // mskVencimiento
-            // 
-            this.mskVencimiento.Location = new System.Drawing.Point(124, 353);
-            this.mskVencimiento.Mask = "0000/00/000 00:00";
-            this.mskVencimiento.Name = "mskVencimiento";
-            this.mskVencimiento.Size = new System.Drawing.Size(100, 23);
-            this.mskVencimiento.TabIndex = 39;
-            this.mskVencimiento.ValidatingType = typeof(System.DateTime);
+            this.cmbEstado.SelectedIndexChanged += new System.EventHandler(this.cmbEstado_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -197,15 +181,34 @@
             // txtNumCuota
             // 
             this.txtNumCuota.Location = new System.Drawing.Point(124, 110);
+            this.txtNumCuota.MaxLength = 7;
             this.txtNumCuota.Name = "txtNumCuota";
             this.txtNumCuota.Size = new System.Drawing.Size(145, 23);
             this.txtNumCuota.TabIndex = 37;
+            // 
+            // dtpVencimiento
+            // 
+            this.dtpVencimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpVencimiento.Location = new System.Drawing.Point(125, 350);
+            this.dtpVencimiento.Name = "dtpVencimiento";
+            this.dtpVencimiento.Size = new System.Drawing.Size(112, 23);
+            this.dtpVencimiento.TabIndex = 54;
+            // 
+            // dtpFechaPago
+            // 
+            this.dtpFechaPago.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaPago.Location = new System.Drawing.Point(123, 401);
+            this.dtpFechaPago.Name = "dtpFechaPago";
+            this.dtpFechaPago.Size = new System.Drawing.Size(112, 23);
+            this.dtpFechaPago.TabIndex = 54;
             // 
             // ActualizarCuota
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(354, 532);
+            this.Controls.Add(this.dtpFechaPago);
+            this.Controls.Add(this.dtpVencimiento);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.cmbTipo);
             this.Controls.Add(this.button2);
@@ -219,13 +222,12 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cmbEstado);
-            this.Controls.Add(this.mskFechaPago);
-            this.Controls.Add(this.mskVencimiento);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtNumCuota);
             this.Name = "ActualizarCuota";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ActualizarCuota";
+            this.Load += new System.EventHandler(this.ActualizarCuota_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -246,9 +248,9 @@
         private Label label3;
         private Label label2;
         private ComboBox cmbEstado;
-        private MaskedTextBox mskFechaPago;
-        private MaskedTextBox mskVencimiento;
         private Label label1;
         private TextBox txtNumCuota;
+        private DateTimePicker dtpVencimiento;
+        private DateTimePicker dtpFechaPago;
     }
 }

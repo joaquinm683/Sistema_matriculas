@@ -26,6 +26,11 @@ namespace SisMat_BL
             return objCuotaADO.ActualizarCuota(objCuotaBE);
         }
 
+        public CuotaBE ConsultarCuota(String idCuota)
+        {
+            return objCuotaADO.ConsultarCuota(idCuota);
+        }
+
         public Boolean EliminarCuota(Int16 idCuota)
         {
             return objCuotaADO.EliminarCuota(idCuota);

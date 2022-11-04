@@ -154,7 +154,7 @@ namespace SisMat_ADO
                 sqlConnection.ConnectionString = ADOconnection.GetCnx();
                 command.Connection = sqlConnection;
                 command.CommandType = CommandType.StoredProcedure;
-                command.CommandText = "ñ";
+                command.CommandText = "usp_listar_alumnos";
                 command.Parameters.Clear();
                 SqlDataAdapter ada = new SqlDataAdapter(command);
                 ada.Fill(dts, "Alumnos");

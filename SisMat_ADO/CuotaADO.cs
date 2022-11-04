@@ -24,11 +24,34 @@ namespace SisMat_ADO
                 sqlConnection.ConnectionString = ADOconnection.GetCnx();
                 command.Connection = sqlConnection;
                 command.CommandType = CommandType.StoredProcedure;
-                command.CommandText = "usp_InsertarCuota";
+                command.CommandText = "usp_insert_cuota";
                 command.Parameters.Clear();
-                // command.Parameters.AddWithValue("parametro", objCuotaBE_campoX) PARAMETROS DE
-                //   // command.Parameters.AddWithValue("parametro", objCuotaBE_campoX) PARAMETROS DE ENTRADA
-                sqlConnection.Open();
+                command.Parameters.AddWithValue("Id_Alum", objCuotaBE.Id_alum);
+                command.Parameters.AddWithValue("Ndoc_cuota", objCuotaBE.Ndoc_cuota);
+
+
+                if(objCuotaBE.Fec_pago.Year ==9999)
+                {
+                    command.Parameters.AddWithValue("Fecha_pago", null);
+                }
+                else {
+                    command.Parameters.AddWithValue("Fecha_pago", objCuotaBE.Fec_pago);
+
+                }
+                command.Parameters.AddWithValue("Est_cuota", objCuotaBE.Est_cuota);
+                command.Parameters.AddWithValue("Tip_cuota", objCuotaBE.Tip_cuota);
+                command.Parameters.AddWithValue("Vencimiento", objCuotaBE.Vencimiento);
+                command.Parameters.AddWithValue("Precio_cuota", objCuotaBE.Precio_cuota);
+
+
+
+       
+
+
+
+
+        //   // command.Parameters.AddWithValue("parametro", objCuotaBE_campoX) PARAMETROS DE ENTRADA
+        sqlConnection.Open();
                 command.ExecuteNonQuery();
                 return true;
             }
@@ -50,14 +73,30 @@ namespace SisMat_ADO
             sqlConnection.ConnectionString = ADOconnection.GetCnx();
             command.Connection = sqlConnection;
             command.CommandType = CommandType.StoredProcedure;
-            command.CommandText = "usp_ActualizarCuota";
+            command.CommandText = "usp_update_cuota";
             command.Parameters.Clear();
-            // command.Parameters.AddWithValue("parametro", objProfesorBE_campoX) PARAMETROS DE ENTRADA
+
+            command.Parameters.AddWithValue("Id_Cuota", objCuotaBE.Id_cuota);
+            command.Parameters.AddWithValue("Id_Alum", objCuotaBE.Id_alum);
+            command.Parameters.AddWithValue("Ndoc_cuota", objCuotaBE.Ndoc_cuota);
+            if (objCuotaBE.Fec_pago.Year == 9999)
+            {
+                command.Parameters.AddWithValue("Fecha_pago", null);
+            }
+            else
+            {
+                command.Parameters.AddWithValue("Fecha_pago", objCuotaBE.Fec_pago);
+
+            }
+            command.Parameters.AddWithValue("Est_cuota", objCuotaBE.Est_cuota);
+            command.Parameters.AddWithValue("Tip_cuota", objCuotaBE.Tip_cuota);
+            command.Parameters.AddWithValue("Vencimiento", objCuotaBE.Vencimiento);
+            command.Parameters.AddWithValue("Precio_cuota", objCuotaBE.Precio_cuota);          
             sqlConnection.Open();
             command.ExecuteNonQuery();
             return true;
         }
-        public CuotaBE ConsultarCuota(Int16 idCuota)
+        public CuotaBE ConsultarCuota(String idCuota)
         {
             try
             {
@@ -65,8 +104,8 @@ namespace SisMat_ADO
                 sqlConnection.ConnectionString = ADOconnection.GetCnx();
                 command.Connection = sqlConnection;
                 command.CommandType = CommandType.StoredProcedure;
-                command.CommandText = "usp_ConsultarCuota";
-                // command.Parameters.AddWithValue("parametroName", idCuota) PARAMETROS DE ENTRADA
+                command.CommandText = "usp_consultar_cuota";
+                command.Parameters.AddWithValue("id_cuota", idCuota);
                 sqlConnection.Open();
                 dr = command.ExecuteReader();
                 if (dr.HasRows)
@@ -75,13 +114,23 @@ namespace SisMat_ADO
                     objCuotaBE.Id_cuota = Convert.ToInt16(dr["Id_cuota"]);
                     objCuotaBE.Id_alum = Convert.ToInt16(dr["Id_alum"]);
                     objCuotaBE.Ndoc_cuota = dr["Ndoc_cuota"].ToString();
-                    objCuotaBE.Fec_pago = Convert.ToDateTime(dr["Fecha_pago"]);
+
+
+                    if (dr["Fecha Pago"] != DBNull.Value)
+                    {
+                        objCuotaBE.Fec_pago = DateTime.ParseExact(Convert.ToString(dr["Fecha Pago"]), "dd/MM/yyyy", null); 
+                    }
+
+                                       
                     objCuotaBE.Est_cuota = Convert.ToInt16(dr["Est_cuota"]);
                     objCuotaBE.Tip_cuota = Convert.ToInt16(dr["Tip_cuota"]);
-                    objCuotaBE.Vencimiento = Convert.ToDateTime(dr["Vencimiento"]);
-                    objCuotaBE.Precio_cuota = Convert.ToSingle(dr["Precio_cuota"]);
+                    objCuotaBE.Vencimiento = DateTime.ParseExact(Convert.ToString(dr["Vencimiento"]), "dd/MM/yyyy", null);
+                    objCuotaBE.Precio_cuota = Convert.ToSingle(dr["Precio"]);
+
+                    
                 }
                 dr.Close();
+
                 return objCuotaBE;
             }
             catch (SqlException e)
@@ -104,7 +153,7 @@ namespace SisMat_ADO
                 sqlConnection.ConnectionString = ADOconnection.GetCnx();
                 command.Connection = sqlConnection;
                 command.CommandType = CommandType.StoredProcedure;
-                command.CommandText = "usp_ListarCuota";
+                command.CommandText = "usp_listar_cuota";
                 command.Parameters.Clear();
                 SqlDataAdapter ada = new SqlDataAdapter(command);
                 ada.Fill(dts, "Cuotas");
